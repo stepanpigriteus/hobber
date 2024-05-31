@@ -1,0 +1,201 @@
+
+.nav_super {
+    background-color: var(--var-header-bg) !important;
+}
+
+.nav_container {
+    max-width: 1100px;
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    color: var(--var-body-fc);
+}
+
+.headerP {
+    margin: auto 0;
+}
+
+.round_button {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.round_icon {
+    margin: auto;
+}
+
+.button_container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin-right: 0;
+    align-content: center;
+}
+
+.submit_button {
+    margin: 1rem 0;
+}
+
+.header_icon {
+    margin-right: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0;
+}
+
+.input_container {
+    height: 40vh;
+    text-align: left;
+}
+
+.field_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.form_option {
+    margin-bottom: 1rem;
+}
+
+.option_drop {
+    margin-left: 1rem;
+}
+
+.theme_switch {
+    margin: auto;
+    max-width: fit-content;
+}
+
+.search {
+    margin: 1rem 0;
+}
+
+.search_field {
+    min-width: 7rem;
+    margin-left: 1rem;
+}
+
+.button {
+    margin-left: 1rem;
+    text-wrap: nowrap;
+}
+
+
+.switch_icon {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+
+.item_card {
+    max-width: 15vw;
+    min-width: 18rem;
+    margin: 2.2vh 1vw;
+    padding: 0;
+    border-radius: 0.4rem;
+    color: var(--var-body-fc);
+    background-color: var(--var-card-bg);
+}
+
+.card_body {
+    padding: 1rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.item_card:hover {
+    box-shadow:7px 7px 10px var(--var-shadow);
+}
+
+.item_store {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.input_container {
+    max-width: fit-content;
+}
+
+
+.tabstyle {
+    width: 80vw;
+    margin: 0 auto;   
+}
+
+.breadcrump {
+    margin-top: 10rem;
+    width: 60vw;
+    max-width: 1100px;
+
+}
+
+
+.form_row {
+    display: flex;
+    align-content: center;
+    margin-bottom: 1rem;
+   
+}
+
+.form_label_col {
+    text-align: left;
+
+}
+
+.item_generator {
+    text-align: left;
+    max-width: 24rem;
+    border: 1px solid rgba(34, 44, 34, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.item_generator_title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.markdown {
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+
+.form_button_container {
+    display: flex;
+    justify-content: center;
+    padding: auto;
+}
+
+
+.alert_item_table {
+    margin: 3rem auto 1rem;
+    font-size: 1.4rem;
+}
+
+.form_container {
+    max-width: 30vw;
+    margin: 4rem auto;
+    padding: 2rem;
+    border: 1px solid rgba(23, 23, 23, 0.15);
+    border-radius: 1rem;
+}
