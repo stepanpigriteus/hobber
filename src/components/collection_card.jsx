@@ -27,23 +27,25 @@ export default function Collection(props) {
 
     return(
         <>
-            <Card className="item_card" style={{ width: '16rem' }} owner={owner}>
-                <Card.Body className="card_body">
+           <Card className="item_card" style={{ width: '16rem' }} owner={owner}>
+                <Card.Body className="d-flex flex-column card_body">
                     <Card.Title className="h6">{collectionName}</Card.Title>
                     <Card.Text> {itemsCount} </Card.Text>
-                    <RenderMarkdown content={description}/>
-                    <Card.Text> Create: {createDate} </Card.Text>  
+                    <RenderMarkdown content={description} />
+                    <Card.Text> Create: {createDate} </Card.Text>
+                    <div className="mt-auto">
                     <Button onClick={handleClick} variant="primary"> See items</Button>
                     {owner === userId && (
                         <>
-                            <Button variant="dark" className="m-2">
-                                <PlusCircle/>
-                            </Button>
-                            <Button id={'sdf'} variant="danger" className="m-0.5">
-                                <Trash3Fill/>
-                            </Button>
+                        <Button variant="dark" className="m-2">
+                            <PlusCircle />
+                        </Button>
+                        <Button id={'sdf'} variant="danger" className="m-0.5">
+                            <Trash3Fill />
+                        </Button>
                         </>
                     )}
+                    </div>
                 </Card.Body>
             </Card>
         </>

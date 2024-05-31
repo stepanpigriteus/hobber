@@ -27,7 +27,6 @@ export default function ItemTable() {
           const result = await response.json();
           console.log('Collection retrieved successfully:', result);
           setData(result.data.slice(1));
-  
           if (result.data.length > 0) {
             const firstItemFields = result.data[0].fields;
             const filteredColumns = firstItemFields.map(field => field.name);
@@ -50,19 +49,22 @@ export default function ItemTable() {
     }
   }, [colName]);
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (itemId) => {
+    const colName = localStorage.getItem('collectionName');
     try {
       const response = await fetch('https://testt-zumv.onrender.com/api/collections/delete_item', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ collectionName: colName, id }),
+        body: JSON.stringify({ collectionName: colName, itemId }),
+       
       });
 
       if (response.ok) {
         const result = await response.json();
         setData(userData.filter(item => item._id !== id));
+        console.log(result)
       } else {
         const error = await response.json();
         console.error('Error deleting item:', error.message);
@@ -98,14 +100,14 @@ export default function ItemTable() {
               <tbody>
                 {userData.map((item, index) => (
                   <tr key={index}>
-                    <td>{item._id}</td>
+                    <td >{item.itemId}</td>
                     {columns.map((column, columnIndex) => (
                       <td key={columnIndex}>
                         {typeof item[column] === 'boolean' ? item[column].toString() : item[column]}
                       </td>
                     ))}
                     <td>
-                      <ItemControlsDelete itemId={item._id} onDelete={handleDelete} />
+                      <ItemControlsDelete itemId={item.itemId} onDelete={handleDelete} />
                     </td>
                   </tr>
                 ))}

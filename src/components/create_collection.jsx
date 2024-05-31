@@ -47,7 +47,7 @@ export default function CreateCollection() {
                 console.log('Collection created successfully:', result);
                 localStorage.setItem('fields', JSON.stringify(collectionData.fields));
                 localStorage.setItem('collectionName', collectionName );
-                navigate('/cabinet/collection/create_items');
+                navigate('/cabinet/collection/');
             } else {
                 const error = await response.json();
                 console.error('Error creating collection:', error.message);
