@@ -17,8 +17,8 @@ const FullWidthTabs = () => {
         <Tab eventKey="profile" title="Create new collection" className='p-4'>
           <CreateCollection/>
         </Tab>
-        <Tab eventKey="contact" title="This section is being updated" className='p-4'>
-          <div></div>
+        <Tab eventKey="contact" title="Account settings" className='p-4'>
+          <div>This section is being updated</div>
         </Tab>
       </Tabs>
     </div>
