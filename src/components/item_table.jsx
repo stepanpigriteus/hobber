@@ -63,7 +63,8 @@ export default function ItemTable() {
 
       if (response.ok) {
         const result = await response.json();
-        setData(userData.filter(item => item._id !== id));
+        const updatedData = userData.filter(item => item.itemId !== itemId);
+        setData(updatedData);
         console.log(result)
       } else {
         const error = await response.json();
