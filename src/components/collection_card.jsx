@@ -21,7 +21,7 @@ export default function Collection(props) {
 
     const collectionName = props.collectionName.split('|')[1];
     let itemsCount;
-    props.totalDocuments ? itemsCount = "Size: " + props.totalDocuments : itemsCount = 'Empty collection';
+    props.totalDocuments > 1 ? itemsCount = "Size: " + props.totalDocuments: itemsCount = 'Empty collection';
     const createDate = props.firstDocument && props.firstDocument.date ? props.firstDocument.date : 'Unknown';
     const owner = props.collectionName.split('|')[0];
 
