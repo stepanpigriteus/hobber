@@ -14,12 +14,36 @@ export default function Collection(props) {
         props.firstDocument.description.substring(0, 53) + '...' : 
         props.firstDocument.description
     ) : '';
+
+    const handleCreate = () => {
+        navigate('/cabinet/collection/create_items');
+    };
     
     function handleClick() { 
         localStorage.setItem('collectionName', props.collectionName);
         localStorage.setItem('fields', JSON.stringify(props.firstDocument.fields));
         navigate('/cabinet/collection');
     }
+    // const handleDelete = async () => {
+    //     try {
+    //         const response = await fetch(`YOUR_API_ENDPOINT/delete/${props.collectionName}`, {
+    //             method: 'DELETE',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //         });
+    //         if (response.ok) {
+    //             navigate('/cabinet/collection');
+    //         } else {
+    //             // Обработка ошибки удаления
+    //             console.error('Delete collection failed:', response.statusText);
+    //         }
+    //     } catch (error) {
+    //         console.error('Delete collection error:', error);
+    //     }
+    // };
+
+
 
     const collectionName = props.collectionName.split('|')[1];
     let itemsCount;
@@ -43,10 +67,10 @@ export default function Collection(props) {
                     <Button onClick={handleClick} variant="primary"> {t("seeItems")}</Button>
                     {owner === userId && (
                         <>
-                        <Button variant="dark" className="m-2">
+                        <Button variant="dark" className="m-2" onClick={handleCreate}>
                             <PlusCircle />
                         </Button>
-                        <Button id={'sdf'} variant="danger" className="m-0.5">
+                        <Button id={'sdf'} variant="danger" className="m-0.5" >
                             <Trash3Fill />
                         </Button>
                         </>
