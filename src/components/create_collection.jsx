@@ -63,7 +63,7 @@ export default function CreateCollection() {
         <Container className="input_container">
             <Form onSubmit={handleSubmit}>
                 <Form.Control
-                    className="form_option"
+                    className="form_option form_field_color"
                     type="text"
                     id="inputTitle"
                     aria-describedby="inputTitleBlock"
@@ -72,7 +72,7 @@ export default function CreateCollection() {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <label> Choose category</label>
-                <Form.Select className="form_option mt-2" value={category} onChange={(e) => setCategory(e.target.value)}>
+                <Form.Select className="form_option mt-2 form_field_color" value={category}  onChange={(e) => setCategory(e.target.value)}>
                     <option defaultValue value="0"> Select category </option>
                     <option value="Books">Books</option>
                     <option value="Films">Films</option>
@@ -80,18 +80,18 @@ export default function CreateCollection() {
                     <option value="Albums">Albums</option>
                     <option value="Others">Others</option>
                 </Form.Select>
-                <MarkdownEditor value={description} onChange={setDescription}/>                
+                <MarkdownEditor value={description} onChange={setDescription} />                
                 {fields.map((field, index) => (
-                    <div key={index} className="field_container">
+                    <div key={index} className="field_container ">
                         <Form.Control
-                            className="form_option"
+                            className="form_option form_field_color"
                             type="text"
                             placeholder={`Enter title for Field ${index + 1}`}
                             value={field.name}
                             onChange={(e) => handleFieldChange(index, 'name', e.target.value)}
                         />
                         <Form.Select
-                            className="form_option option_drop"
+                            className="form_option option_drop form_field_color"
                             value={field.value}
                             onChange={(e) => handleFieldChange(index, 'value', e.target.value)}
                         >

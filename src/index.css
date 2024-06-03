@@ -13,7 +13,9 @@
   --var-card-bg: rgba(248, 249, 250, 0.87);
   --var-breadcrump-fc: #646cff;
   --var-button-all-bg: #232323;
-  --var-border-tabs: rgba(0, 0, 0, 0.8);
+  --var-border-tabs: rgba(208, 208, 208, 0.737);
+  --var-field-color: rgba(238, 238, 238, 0.242);
+  --var-filed-border-color: rgba(238, 238, 238, 0.242);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,6 +33,7 @@
   --var-breadcrump-fc: #ffffff;
   --var-button-all-bg: rgba(29, 94, 246,0.93);
   --var-border-tabs: rgba(255, 255, 255, 0.87);
+  --var-field-color: rgba(255, 255, 255, 0.957);
 }
 
 a {

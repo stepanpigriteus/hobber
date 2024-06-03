@@ -20,6 +20,7 @@ export default function Switch() {
       <Button onClick={handleClick} style={{ background: "none", border: "none"}}>
         {status ? <CloudMoonFill  className="switch_icon" style={{ color: "#242424"}} /> : <BrightnessAltHighFill  className="switch_icon" style={{ color: "white"}} />}
       </Button>
+      
     </Form>
   );
 }

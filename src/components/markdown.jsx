@@ -9,7 +9,7 @@ const md = new MarkdownIt();
 export default  function MarkdownEditor({ value, onChange }) {
   return (
     <>
-      <Container className='p-0 markdown'>
+      <Container className='p-0 markdown form_field_color'>
         <ReactQuill
           value={value}
           onChange={onChange}
