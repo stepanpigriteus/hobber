@@ -52,25 +52,16 @@
     border: 1px solid var(--var-border-tabs);
 }
 
-.dropdow-menu {
-    min-width: none;
-}
-/* #myDropdownMenu {
-    max-width: 4rem;
-    margin-right: 2rem;
+.dropdow-menu.show {
+    white-space: nowrap;
 }
 
-.dropdown_container {
-    min-width: 1rem;
-    max-width: 2rem;
-    margin-right: 2rem;
+.dropdown-menu {
+    min-width: 2rem; 
 }
 
 
-.dropdown-item {
-    min-width: 1rem;
-    max-width: 2rem;
-} */
+
 
 
 
