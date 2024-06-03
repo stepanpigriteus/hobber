@@ -11,7 +11,9 @@
   --var-header-bg: rgba(248, 249, 250, 0.87);
   --var-shadow: rgba(0, 0, 134, 0.2);
   --var-card-bg: rgba(248, 249, 250, 0.87);
-
+  --var-breadcrump-fc: #646cff;
+  --var-button-all-bg: #232323;
+  --var-border-tabs: rgba(0, 0, 0, 0.8);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,12 +22,15 @@
 }
 
 [theme='false'] {
-  --var-body-bg: #232323;
+  --var-body-bg: rgba(0, 0, 0, 0.8);
   --var-body-fc: rgba(255, 255, 255, 0.87);
   --var-header-bg: #232323;
   --var-shadow: rgba(255, 255, 255, 0.123);
-  --var-card-bg: rgba(248, 249, 250, 0.17);
+  --var-card-bg: rgba(248, 249, 250, 0.2);
   --bs-tertiary-bg-rgb: var(--var-header-bg);
+  --var-breadcrump-fc: #ffffff;
+  --var-button-all-bg: rgba(29, 94, 246,0.93);
+  --var-border-tabs: rgba(255, 255, 255, 0.87);
 }
 
 a {

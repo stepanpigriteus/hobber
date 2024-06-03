@@ -17,7 +17,7 @@ export default function Header() {
                 <Container className='navbar'>
                     <Form className="d-flex search">
                         <Form.Control type="search" placeholder="Search" className="me-2 search_field" aria-label="Search"/>
-                        <Button variant="outline-success">Search</Button>
+                        <Button variant="outline-success" className='button' >Search</Button>
                     </Form>
                 </Container>
                 {localStorage.getItem('jwt_token') ? <HelloUser onClick={handleLogout}/> : <ButtonType />}

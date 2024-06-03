@@ -10,8 +10,8 @@ const FullWidthTabs = () => {
   };
   return (
     <div className='tabstyle'>
-      <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-        <Tab eventKey="home" title="Your collections" className='p-4'>
+      <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className='custom-tabs'>
+        <Tab eventKey="home" title="Your collections" className='p-4 tabs'>
           <CabinetCollectionStore/>
         </Tab>
         <Tab eventKey="profile" title="Create new collection" className='p-4'>

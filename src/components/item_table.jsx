@@ -86,7 +86,7 @@ export default function ItemTable() {
               <ItemControlsCreate/>
             </>
           ) : (
-            <Table bordered hover>
+            <Table bordered hover className='item_table'>
               <thead>
                 <tr>
                   <th>Id</th>
