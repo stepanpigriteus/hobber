@@ -2,8 +2,10 @@ import { Alert, Button, Container, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import MarkdownEditor from '../components/markdown';
 import {  useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function CreateCollection() {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("0");
@@ -67,18 +69,18 @@ export default function CreateCollection() {
                     type="text"
                     id="inputTitle"
                     aria-describedby="inputTitleBlock"
-                    placeholder='Enter new collection name'
+                    placeholder={t('collectionName')}
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
-                <label> Choose category</label>
+                <label> {t('collectionCategory')}</label>
                 <Form.Select className="form_option mt-2 form_field_color" value={category}  onChange={(e) => setCategory(e.target.value)}>
-                    <option defaultValue value="0"> Select category </option>
-                    <option value="Books">Books</option>
-                    <option value="Films">Films</option>
-                    <option value="Baseball Cards">Baseball Cards</option>
-                    <option value="Albums">Albums</option>
-                    <option value="Others">Others</option>
+                    <option defaultValue value="0"> {t('categorySet')} </option>
+                    <option value="Books">{t('firstFieldOption')}</option>
+                    <option value="Films">{t('secondFieldOption')}</option>
+                    <option value="Baseball Cards">{t('thirdFieldOption')}</option>
+                    <option value="Albums">{t('fourFieldOption')}</option>
+                    <option value="Others">{t('fiveFieldOption')}</option>
                 </Form.Select>
                 <MarkdownEditor value={description} onChange={setDescription} />                
                 {fields.map((field, index) => (
@@ -86,7 +88,7 @@ export default function CreateCollection() {
                         <Form.Control
                             className="form_option form_field_color"
                             type="text"
-                            placeholder={`Enter title for Field ${index + 1}`}
+                            placeholder={`${t('fieldTitle')} ${index + 1}`}
                             value={field.name}
                             onChange={(e) => handleFieldChange(index, 'name', e.target.value)}
                         />
@@ -95,17 +97,17 @@ export default function CreateCollection() {
                             value={field.value}
                             onChange={(e) => handleFieldChange(index, 'value', e.target.value)}
                         >
-                            <option value=""> not selected </option>
-                            <option value="Number">Number</option>
-                            <option value="Checkbox">Checkbox</option>
-                            <option value="Textarea">Textarea</option>
-                            <option value="Long_description">Long description </option>
-                            <option value="Date">Date</option>
+                            <option value=""> {t('setField')} </option>
+                            <option value="Number">{t('firstFieldType')}</option>
+                            <option value="Checkbox">{t('secondFieldType')}</option>
+                            <option value="Textarea">{t('thirdFieldType')}</option>
+                            <option value="Long_description">{t('fourFieldType')} </option>
+                            <option value="Date">{t('fiveFieldType')}</option>
                         </Form.Select>
                     </div>
                 ))}
                 {error && <Alert>{error}</Alert>}
-                <Button type="submit" className="submit_button"> Create collection </Button>
+                <Button type="submit" className="submit_button"> {t('createButton')} </Button>
             </Form>
         </Container>
     );

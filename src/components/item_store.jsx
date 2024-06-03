@@ -1,6 +1,8 @@
 import { Container, Table } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 
 export default function ItemStore() {
+  const { t } = useTranslation();
     
     return(
         <Container>
@@ -14,9 +16,6 @@ export default function ItemStore() {
               <th>Number</th>
             </tr>
           </thead>
-          {/* <tbody>
-           {fakeUsers.map((el, i) => <Line key = {el.id} name={el.name} id= {el.id} number={1 + i} address={el.address} phone={el.phone}/>)}
-          </tbody> */}
         </Table>
         </Container>
     );

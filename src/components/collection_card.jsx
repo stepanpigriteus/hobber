@@ -2,9 +2,11 @@ import { Card, Button } from "react-bootstrap";
 import { PlusCircle, Trash3Fill } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 import RenderMarkdown from "./markdown_render";
+import { useTranslation } from 'react-i18next';
 
 export default function Collection(props) {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     let userId = localStorage.getItem('id');
     
     const description = props.firstDocument && props.firstDocument.description ? 
@@ -21,8 +23,12 @@ export default function Collection(props) {
 
     const collectionName = props.collectionName.split('|')[1];
     let itemsCount;
-    props.totalDocuments > 1 ? itemsCount = "Size: " + props.totalDocuments: itemsCount = 'Empty collection';
-    const createDate = props.firstDocument && props.firstDocument.date ? props.firstDocument.date : 'Unknown';
+    props.totalDocuments > 1 ? 
+        itemsCount = t("size", { count: props.totalDocuments }) : 
+        itemsCount = t("emptyCollection");
+    const createDate = props.firstDocument && props.firstDocument.date ? 
+        props.firstDocument.date : 
+        t("unknown");
     const owner = props.collectionName.split('|')[0];
 
     return(
@@ -32,9 +38,9 @@ export default function Collection(props) {
                     <Card.Title className="h6">{collectionName}</Card.Title>
                     <Card.Text> {itemsCount} </Card.Text>
                     <RenderMarkdown content={description} />
-                    <Card.Text> Create: {createDate} </Card.Text>
+                    <Card.Text> {t("createdOn", { date: createDate })} </Card.Text>
                     <div className="mt-auto">
-                    <Button onClick={handleClick} variant="primary"> See items</Button>
+                    <Button onClick={handleClick} variant="primary"> {t("seeItems")}</Button>
                     {owner === userId && (
                         <>
                         <Button variant="dark" className="m-2">

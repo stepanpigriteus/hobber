@@ -2,6 +2,7 @@ import { Navbar } from 'react-bootstrap';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link, useLocation } from 'react-router-dom';
 
+
 export default  function BreadcrumbExample() {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);

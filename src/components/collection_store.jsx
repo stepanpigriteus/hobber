@@ -13,12 +13,14 @@ export default function CollectionStore() {
                     setUserCollections(data)
                 })
                 .catch(error => console.error('Ошибка:', error));
+             
     }, []);
+    
     
     return (
         <Container className="item_store">
-        {userCollections.map(collection => (
-            <Collection {...collection}/>
+        {userCollections.map((collection, index) => (
+            <Collection key={index} {...collection}/>
         ))}
         </Container>
     );

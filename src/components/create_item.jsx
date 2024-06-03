@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function CreateItem() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const { t } = useTranslation();
+
     const [formData, setFormData] = useState({});
     const [error, setError] = useState("");
 
@@ -51,7 +54,7 @@ export default function CreateItem() {
                         <Form.Control
                             type="number"
                             name={field.name}
-                            placeholder={`This is a number field`}
+                            placeholder={t('numberPlaceholder')}
                             onChange={handleInputChange}
                         />
                     </Form.Group>
@@ -63,7 +66,7 @@ export default function CreateItem() {
                         <Form.Control
                             type="text"
                             name={field.name}
-                            placeholder={`Enter ${field.name}`}
+                            placeholder={t('textareaPlaceholder', { fieldName: field.name })}
                             onChange={handleInputChange}
                         />
                     </Form.Group>
@@ -115,13 +118,12 @@ export default function CreateItem() {
     return (
         <Container className='item_generator'>
             <Card.Title className='item_generator_title'>
-                Create new item in "{collName}"
+                {t('createNewItem', { collName })}
             </Card.Title>
             <Form onSubmit={handleSubmit}>
-        
                 {fields.map(field => renderField(field))}
                 <Container className='form_button_container'>
-                    <Button type="submit" className='mt-4'>Create item</Button>
+                    <Button type="submit" className='mt-4'>{t('submitButton')}</Button>
                 </Container>
             </Form>
         </Container>

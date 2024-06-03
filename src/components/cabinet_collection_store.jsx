@@ -1,8 +1,10 @@
 import { Container } from "react-bootstrap";
 import Collection from "./collection_card";
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 export default function CabinetCollectionStore() {
+    const { t } = useTranslation();
     const [userCollections, setUserCollections] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -34,9 +36,9 @@ export default function CabinetCollectionStore() {
     return (
         <Container className="item_store">
             {isLoading ? (
-                <p>Loading...</p>
+                <p>{t('loading')}</p>
             ) : userCollections.length === 0 ? (
-                <p>У вас нет коллекций. Создайте свою первую коллекцию!</p>
+                <p>{t('collectionPlaceholder')}</p>
             ) : (
                 userCollections.map((collection, index) => (
                     <Collection key={index} {...collection} />
