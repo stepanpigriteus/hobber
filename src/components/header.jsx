@@ -45,17 +45,18 @@ export default function Header() {
           </Container>
           <Container className='button_container'>
           {localStorage.getItem('jwt_token') ? <HelloUser onClick={handleLogout} /> : <ButtonType />}
-          <DropdownButton
-                    id="dropdown-basic-button"
+            <DropdownButton
+                    id="myDropdownMenu"
                     variant='dark'
                     title={t('language')}
                     onSelect={(e) => changeLanguage(e)}
-                    className='button'
+                    className='button dropdown_container '
                 >
-                    <Dropdown.Item eventKey="en">English</Dropdown.Item>
-                    <Dropdown.Item eventKey="kk">Қазақша</Dropdown.Item>
-                    <Dropdown.Item eventKey="ru">Русский</Dropdown.Item>
-                </DropdownButton>
+                  
+                    <Dropdown.Item eventKey="en" >Eng</Dropdown.Item>
+                    <Dropdown.Item eventKey="kk" >Қаз</Dropdown.Item>
+                    <Dropdown.Item eventKey="ru" >Ру</Dropdown.Item>
+              </DropdownButton>
             </Container>
         </Container>
       </Navbar>

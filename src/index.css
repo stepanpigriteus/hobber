@@ -16,7 +16,7 @@
   --var-border-tabs: rgba(208, 208, 208, 0.737);
   --var-field-color: rgba(238, 238, 238, 0.242);
   --var-filed-border-color: rgba(238, 238, 238, 0.242);
-
+  --bs-dropdown-min-width: 1rem;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

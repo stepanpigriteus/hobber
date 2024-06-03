@@ -52,6 +52,28 @@
     border: 1px solid var(--var-border-tabs);
 }
 
+.dropdow-menu {
+    min-width: none;
+}
+/* #myDropdownMenu {
+    max-width: 4rem;
+    margin-right: 2rem;
+}
+
+.dropdown_container {
+    min-width: 1rem;
+    max-width: 2rem;
+    margin-right: 2rem;
+}
+
+
+.dropdown-item {
+    min-width: 1rem;
+    max-width: 2rem;
+} */
+
+
+
 .field_container {
     display: flex;
     justify-content: space-between;
