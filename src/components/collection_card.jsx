@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import RenderMarkdown from "./markdown_render";
 import { useTranslation } from 'react-i18next';
 
-export default function Collection(props) {
+export default function Collection(props, {handleDelete}) {
     const navigate = useNavigate();
     const { t } = useTranslation();
     let userId = localStorage.getItem('id');
@@ -24,26 +24,6 @@ export default function Collection(props) {
         localStorage.setItem('fields', JSON.stringify(props.firstDocument.fields));
         navigate('/cabinet/collection');
     }
-    const handleDelete = async () => {
-        try {
-            const response = await fetch(`https://testt-zumv.onrender.com/api/collections/delete_collection`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ collectionName: localStorage.getItem('collectionName') }),
-            });
-            const result = await response.json();
-            if (response.ok) {
-                console.log(result)
-            } else {
-                // Обработка ошибки удаления
-                console.error('Delete collection failed:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Delete collection error:', error);
-        }
-    };
 
 
 
