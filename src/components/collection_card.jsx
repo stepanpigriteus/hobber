@@ -24,24 +24,26 @@ export default function Collection(props) {
         localStorage.setItem('fields', JSON.stringify(props.firstDocument.fields));
         navigate('/cabinet/collection');
     }
-    // const handleDelete = async () => {
-    //     try {
-    //         const response = await fetch(`YOUR_API_ENDPOINT/delete/${props.collectionName}`, {
-    //             method: 'DELETE',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //         });
-    //         if (response.ok) {
-    //             navigate('/cabinet/collection');
-    //         } else {
-    //             // Обработка ошибки удаления
-    //             console.error('Delete collection failed:', response.statusText);
-    //         }
-    //     } catch (error) {
-    //         console.error('Delete collection error:', error);
-    //     }
-    // };
+    const handleDelete = async () => {
+        try {
+            const response = await fetch(`https://testt-zumv.onrender.com/api/collections/delete_collection`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ collectionName: localStorage.getItem('collectionName') }),
+            });
+            const result = await response.json();
+            if (response.ok) {
+                console.log(result)
+            } else {
+                // Обработка ошибки удаления
+                console.error('Delete collection failed:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Delete collection error:', error);
+        }
+    };
 
 
 
@@ -70,7 +72,7 @@ export default function Collection(props) {
                         <Button variant="dark" className="m-2" onClick={handleCreate}>
                             <PlusCircle />
                         </Button>
-                        <Button id={'sdf'} variant="danger" className="m-0.5" >
+                        <Button id={'sdf'} variant="danger" className="m-0.5" onClick={handleDelete}>
                             <Trash3Fill />
                         </Button>
                         </>
