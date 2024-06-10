@@ -1,13 +1,12 @@
 import { Container } from "react-bootstrap";
 import Collection from "./collection_card";
 import { useEffect, useState } from "react";
-import { handleDelete } from "../scripts/scripts";
+
 
 export default function CollectionStore() {
     const [userCollections, setUserCollections] = useState([]);
 
-    handleDelete();
-    
+
 
     useEffect(() => {
             fetch('https://testt-zumv.onrender.com/get_user_collection_all')
@@ -19,11 +18,15 @@ export default function CollectionStore() {
              
     }, []);
     
+    useEffect(() => {
+        fetchUserCollections();
+    }, []);
+    
     
     return (
         <Container className="item_store">
         {userCollections.map((collection, index) => (
-            <Collection key={index} {...collection} onClick={handleDelete}/>
+            <Collection key={index} { ...collection}/>
         ))}
         </Container>
     );

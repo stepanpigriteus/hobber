@@ -91,7 +91,7 @@ export default function CreateCollection() {
                             placeholder={`${t('fieldTitle')} ${index + 1}`}
                             value={field.name}
                             onChange={(e) => handleFieldChange(index, 'name', e.target.value)}
-                        />
+                        />  
                         <Form.Select
                             className="form_option option_drop form_field_color"
                             value={field.value}

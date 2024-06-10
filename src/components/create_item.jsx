@@ -10,7 +10,7 @@ export default function CreateItem() {
     const [formData, setFormData] = useState({});
     const [error, setError] = useState("");
 
-    const fields = JSON.parse(localStorage.getItem('fields')) || [];
+    const fields = JSON.parse(localStorage.getItem('fields'));
     let id = localStorage.getItem('id');
     let collName = localStorage.getItem('collectionName').split('|')[1];
 
