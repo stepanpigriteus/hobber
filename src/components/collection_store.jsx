@@ -18,10 +18,7 @@ export default function CollectionStore() {
              
     }, []);
     
-    useEffect(() => {
-        fetchUserCollections();
-    }, []);
-    
+ 
     
     return (
         <Container className="item_store">
